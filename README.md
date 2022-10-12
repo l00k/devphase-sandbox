@@ -5,7 +5,7 @@
 ```shell
 git clone --recursive git@github.com:l00k/devphase-sandbox.git
 ```
-2. Follow steps from [devPHAse doc]() to build local stack
+2. Follow steps from [devPHAse doc](https://github.com/l00k/devphase) to build local stack
 3. Set a proper path to Phala blockchain directory in `/dev-node/.env`
 4. Start the local stack.
 ```shell
