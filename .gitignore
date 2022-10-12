@@ -1,0 +1,9 @@
+/contract/target/
+/dev-node/data
+
+**/*.rs.bk
+Cargo.lock
+
+node_modules
+yarn.lock
+.env

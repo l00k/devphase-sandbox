@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "lib": ["esnext"],
+        "moduleResolution": "node",
+
+        "outDir": "./build",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "removeComments": true,
+        "declaration": true,
+
+        "strict": true,
+        "noImplicitAny": false,
+        "noImplicitThis": true,
+        "noImplicitReturns": true,
+        "strictNullChecks": false,
+        "strictPropertyInitialization": false,
+
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+
+        
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [ "./*", ]
+        },
+        
+        "typeRoots": [
+            "node_modules/@types",
+            "../node_modules/@types",
+            "./typings/global"
+        ],
+        "types": [
+            "mocha",
+            "chai",
+            "node",
+            "global"
+        ]
+    },
+    "include": [
+        "./**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
