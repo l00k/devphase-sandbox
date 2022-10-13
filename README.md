@@ -9,7 +9,7 @@ git clone --recursive git@github.com:l00k/devphase-sandbox.git
 3. Set a proper path to Phala blockchain directory in `/dev-node/.env`
 4. Start the local stack.
 ```shell
-cd dev-phase
+cd dev-node
 ./run.sh
 ```
 5. Install dependencies
