@@ -8,6 +8,8 @@ chai.use(chaiAsPromised);
 
 
 before(async function() {
+    this.timeout(30 * 1000);
+
     this.devPhase = await DevPhase.setup();
     this.api = this.devPhase.api;
 });

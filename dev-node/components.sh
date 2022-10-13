@@ -17,7 +17,18 @@ case $1 in
             --port 8000
     ;;
     pherry)
-        sleep 10
+        while ! nc -z 127.0.0.1 9944; do
+            echo -n "."
+            sleep 1
+        done
+
+        while ! nc -z 127.0.0.1 8000; do
+            echo -n "."
+            sleep 1
+        done
+
+        sleep 1
+
         $PHALA_CHAIN_PATH/target/release/pherry \
             --no-wait \
             --mnemonic=//Alice \
