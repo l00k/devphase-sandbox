@@ -1,5 +1,5 @@
 import { Flipper } from '@/typings/contracts/Flipper';
-import { ContractType, DevPhase } from '@devphase/core';
+import { ContractType, DevPhase } from 'devphase';
 import { ApiPromise } from '@polkadot/api';
 import * as PhalaSdk from '@phala/sdk';
 import type { KeyringPair } from '@polkadot/keyring/types';
@@ -13,7 +13,7 @@ describe('Flipper', () => {
     before(async function() {
         const factory = await this.devPhase.getFactory(
             ContractType.InkCode,
-            './contract/target/ink/flipper.contract'
+            './contracts/target/ink/flipper.contract'
         );
         
         await factory.deploy();
@@ -42,16 +42,10 @@ describe('Flipper', () => {
             await contract.tx.flip({}).signAndSend(signer);
         });
 
-        it('Should be created with proper intial value', async function() {
-            const signer = this.devPhase.accounts.alice;
-            const certificate = await PhalaSdk.signCertificate({
-                api: this.api,
-                pair: signer,
-            });
-
+        it('Should return opposite value', async function() {
             const response = await contract.query.get(certificate, {});
 
-            expect(response.output.toJSON()).to.be.equal(true);
+            expect(response.output.toJSON()).to.be.equal(false);
         });
     });
 });

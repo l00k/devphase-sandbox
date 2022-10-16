@@ -1,13 +1,13 @@
 {
-    "name": "@devphase/sandbox",
+    "name": "devphase-sandbox",
+    "private": true,
     "version": "1.0.0",
     "license": "MIT",
     "scripts": {
         "deploy": "ts-node --transpile-only -r tsconfig-paths/register ./scripts/deploy.ts",
-        "test": "ts-mocha"
+        "test": "devphase test"
     },
     "dependencies": {
-        "@devphase/core": "*",
         "@phala/sdk": "^0.3.3",
         "@phala/typedefs": "^0.2.31",
         "@polkadot/api": "^9.4.3",
@@ -15,13 +15,7 @@
         "@polkadot/keyring": "^10.1.9"
     },
     "devDependencies": {
-        "@types/mocha": "^10.0.0",
-        "@types/chai": "^4.3.3",
-        "mocha": "^10.0.0",
-        "chai": "^4.3.6",
-        "chai-as-promised": "^7.1.1",
-        "ts-mocha": "^10.0.0",
-        "ts-node": "^10.9.1",
+        "devphase": "*",
         "tsconfig-paths": "^4.1.0",
         "typescript": "^4.8.3"
     }

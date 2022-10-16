@@ -1,4 +1,4 @@
-import { ContractType, DevPhase } from '@devphase/core';
+import { ContractType, DevPhase } from 'devphase';
 import { Flipper } from '@/typings/contracts/Flipper';
 import * as PhalaSdk from '@phala/sdk';
 import fs from 'fs';

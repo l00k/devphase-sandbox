@@ -1,4 +1,4 @@
-import { ContractQuery, ContractTx, MapMessageQuery, MapMessageTx, PhatContract } from '@devphase/core';
+import { ContractQuery, ContractTx, MapMessageQuery, MapMessageTx, PhatContract } from 'devphase';
 import { ApiTypes } from '@polkadot/api/types';
 
 

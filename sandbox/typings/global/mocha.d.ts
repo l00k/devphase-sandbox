@@ -1,4 +1,4 @@
-import { DevPhase } from '@devphase/core';
+import { DevPhase } from 'devphase';
 import { ApiPromise } from '@polkadot/api';
 
 declare module 'mocha'
