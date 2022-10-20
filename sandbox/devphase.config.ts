@@ -1,6 +1,5 @@
-import { Config } from 'devphase';
+import { ConfigOption } from 'devphase';
 
-const config : Config = {
-};
+const config : ConfigOption = {};
 
 export default config;

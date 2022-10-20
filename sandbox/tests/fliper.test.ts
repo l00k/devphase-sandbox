@@ -36,16 +36,16 @@ describe('Flipper', () => {
         
         expect(response.output.toJSON()).to.be.equal(true);
     });
-    
-    describe('with flip called', async function () {
-        before(async function() {
-            await contract.tx.flip({}).signAndSend(signer);
-        });
-
-        it('Should return opposite value', async function() {
-            const response = await contract.query.get(certificate, {});
-
-            expect(response.output.toJSON()).to.be.equal(false);
-        });
-    });
+    //
+    // describe('with flip called', async function () {
+    //     before(async function() {
+    //         await contract.tx.flip({}).signAndSend(signer);
+    //     });
+    //
+    //     it('Should return opposite value', async function() {
+    //         const response = await contract.query.get(certificate, {});
+    //
+    //         expect(response.output.toJSON()).to.be.equal(false);
+    //     });
+    // });
 });
