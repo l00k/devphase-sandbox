@@ -1,5 +1,5 @@
 /contract/target/
-/dev-node/data
+/standalone/
 
 **/*.rs.bk
 Cargo.lock

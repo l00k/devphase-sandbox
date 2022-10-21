@@ -3,7 +3,6 @@ import * as PhalaSdk from '@phala/sdk';
 import type { KeyringPair } from '@polkadot/keyring/types';
 import { ContractType } from 'devphase';
 
-
 describe('Flipper', () => {
     let contract : Flipper;
     let signer : KeyringPair;
@@ -16,8 +15,6 @@ describe('Flipper', () => {
         );
         
         await factory.deploy();
-        
-        this.skip()
         
         contract = await factory.instantiate(
             'new',
@@ -37,7 +34,7 @@ describe('Flipper', () => {
         
         expect(response.output.toJSON()).to.be.equal(true);
     });
-    //
+    
     // describe('with flip called', async function () {
     //     before(async function() {
     //         await contract.tx.flip({}).signAndSend(signer);
