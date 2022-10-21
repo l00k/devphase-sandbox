@@ -9,24 +9,22 @@ git clone --recursive git@github.com:l00k/devphase-sandbox.git
 ```shell
 yarn install
 ```
-3. Build devPHAse  
-npm package is already released but here you get recent updates
+3. Build devPHAse (and watch changes)
 
 ```shell
 cd devphase
-yarn compile
+yarn compile [--watch]
+
+cd ..
+yarn install # required to link compiled binary
 ```
-4. Start the local stack
-```shell
-yarn devphase stack
-```
-5. Build Flipper contract
-```shell
-cd sandbox/contract
-cargo +nightly contract build
-```
-6. Try testing with mocha
+4. In separate terminal Build Flipper contract
 ```shell
 cd sandbox
-yarn test
+yarn devphase compile [flipper]
+```
+5. Try testing
+```shell
+cd sandbox
+yarn devphase test
 ```
