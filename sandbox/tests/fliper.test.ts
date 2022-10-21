@@ -1,8 +1,7 @@
 import { Flipper } from '@/typings/contracts/Flipper';
-import { ContractType, DevPhase } from 'devphase';
-import { ApiPromise } from '@polkadot/api';
 import * as PhalaSdk from '@phala/sdk';
 import type { KeyringPair } from '@polkadot/keyring/types';
+import { ContractType } from 'devphase';
 
 
 describe('Flipper', () => {
@@ -17,6 +16,8 @@ describe('Flipper', () => {
         );
         
         await factory.deploy();
+        
+        this.skip()
         
         contract = await factory.instantiate(
             'new',

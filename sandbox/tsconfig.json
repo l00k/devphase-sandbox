@@ -25,19 +25,7 @@
         "baseUrl": ".",
         "paths": {
             "@/*": [ "./*", ]
-        },
-        
-        "typeRoots": [
-            "node_modules/@types",
-            "../node_modules/@types",
-            "./typings/global"
-        ],
-        "types": [
-            "mocha",
-            "chai",
-            "node",
-            "global"
-        ]
+        }
     },
     "include": [
         "./**/*.ts"
