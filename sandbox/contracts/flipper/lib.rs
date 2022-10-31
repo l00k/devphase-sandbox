@@ -32,38 +32,34 @@ mod flipper {
 
         #[ink(message)]
         pub fn flip(&mut self) {
-            self.value = !self.value;
+            self.value = !self.value.clone();
 
             let caller = Self::env().caller();
             Self::env().emit_event(Flip {
                 account: caller,
-                value: self.value,
+                value: self.value.clone(),
+            })
+        }
+
+        #[ink(message)]
+        pub fn set(&mut self, value : bool) {
+            self.value = value.clone();
+
+            let caller = Self::env().caller();
+            Self::env().emit_event(Flip {
+                account: caller,
+                value: value.clone(),
             })
         }
 
         #[ink(message)]
         pub fn get(&self) -> bool {
-            self.value
-        }
-    }
-
-    #[cfg(test)]
-    mod tests {
-        use super::*;
-        use ink_lang as ink;
-
-        #[ink::test]
-        fn default_works() {
-            let flipper = Flipper::default();
-            assert_eq!(flipper.get(), false);
+            self.value.clone()
         }
 
-        #[ink::test]
-        fn it_works() {
-            let mut flipper = Flipper::new(false);
-            assert_eq!(flipper.get(), false);
-            flipper.flip();
-            assert_eq!(flipper.get(), true);
+        #[ink(message)]
+        pub fn equals(&self, value : bool) -> bool {
+            self.value == value
         }
     }
 }

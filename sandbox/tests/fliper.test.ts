@@ -3,6 +3,7 @@ import * as PhalaSdk from '@phala/sdk';
 import type { KeyringPair } from '@polkadot/keyring/types';
 import { ContractType } from 'devphase';
 
+
 describe('Flipper', () => {
     let factory : Flipper.Factory;
     let contract : Flipper.Contract;
@@ -49,6 +50,17 @@ describe('Flipper', () => {
     });
     
     
+    describe('constructed', () => {
+        before(async function() {
+            contract = await factory.instantiate('new', [ false ]);
+        });
+        
+        it('Should be possible to set explict value', async function() {
+            await contract.tx.set({}, true).signAndSend(signer);
+        });
+    });
+    
+    
     // describe('with flip called', async function () {
     //     before(async function() {
     //         await contract.tx.flip({}).signAndSend(signer);
@@ -60,4 +72,5 @@ describe('Flipper', () => {
     //         expect(response.output.toJSON()).to.be.equal(false);
     //     });
     // });
+    
 });
