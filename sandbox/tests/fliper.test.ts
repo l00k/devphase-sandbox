@@ -50,15 +50,16 @@ describe('Flipper', () => {
     });
     
     
-    describe('constructed', () => {
-        before(async function() {
-            contract = await factory.instantiate('new', [ false ]);
-        });
-        
-        it('Should be possible to set explict value', async function() {
-            await contract.tx.set({}, true).signAndSend(signer);
-        });
-    });
+    // describe('constructed', () => {
+    //     before(async function() {
+    //         contract = await factory.instantiate('new', [ false ]);
+    //     });
+    //
+    //     it('Should be possible to set explict value', async function() {
+    //         await contract.tx.set({}, true).signAndSend(signer);
+    //         // todo ld 2022-10-31 13:26:38 -wait here
+    //     });
+    // });
     
     
     // describe('with flip called', async function () {
