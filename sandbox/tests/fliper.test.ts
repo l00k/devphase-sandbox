@@ -18,7 +18,7 @@ describe('Flipper', () => {
         
         await factory.deploy();
         
-        signer = this.devPhase.accounts.alice;
+        signer = this.devPhase.accounts.bob;
         certificate = await PhalaSdk.signCertificate({
             api: this.api,
             pair: signer,

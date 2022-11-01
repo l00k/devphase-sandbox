@@ -6,6 +6,11 @@ import type { ContractCallOutcome, ContractOptions } from "@polkadot/api-contrac
 import type { Codec } from "@polkadot/types/types";
 
 export namespace Adv {
+    type ink_primitives$Key = any;
+    type ink_storage$lazy$mapping$Mapping = { offset_key: ink_primitives$Key };
+    type adv$flipper$User = { active: boolean, name: string, role: any, age: number, salery: number, favorite_numbers: number[] };
+    type ink_env$types$AccountId = any;
+
     /** */
     /** Queries */
     /** */
@@ -24,7 +29,7 @@ export namespace Adv {
     /** */
     namespace ContractTx {
         export interface Add extends DPT.ContractTx {
-            (options: ContractOptions, user: { active: boolean, name: string, role: any, age: number, salery: number, favorite_numbers: number[] }): DPT.SubmittableExtrinsic;
+            (options: ContractOptions, user: adv$flipper$User): DPT.SubmittableExtrinsic;
         }
     }
 
