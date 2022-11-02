@@ -1,5 +1,5 @@
-import type { ConfigOption } from 'devphase';
+import type { ProjectConfigOptions } from 'devphase';
 
-const config : ConfigOption = {};
+const config : ProjectConfigOptions = {};
 
 export default config;
