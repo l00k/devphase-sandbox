@@ -1,4 +1,4 @@
-import { ConfigOption } from 'devphase';
+import type { ConfigOption } from 'devphase';
 
 const config : ConfigOption = {};
 
