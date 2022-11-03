@@ -1,5 +1,5 @@
 [package]
-name = "adv"
+name = "adv_cases"
 version = "0.1.0"
 authors = ["[your_name] <[your_email]>"]
 edition = "2021"
@@ -24,7 +24,7 @@ pink-utils = { version = "0.1", default-features = false }
 pink-extension-runtime = "0.1.3"
 
 [lib]
-name = "adv"
+name = "adv_cases"
 path = "lib.rs"
 crate-type = [
 	# Used for normal contract Wasm blobs.

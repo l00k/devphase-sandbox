@@ -7,7 +7,7 @@ use pink_extension as pink;
 
 
 #[pink::contract(env=PinkEnvironment)]
-mod flipper {
+mod adv_cases {
     use super::pink;
     use pink::{PinkEnvironment};
 
@@ -60,13 +60,13 @@ mod flipper {
     #[ink(storage)]
     #[derive(SpreadAllocate)]
     #[cfg_attr(feature = "std", derive(scale_info::TypeInfo))]
-    pub struct Adv {
+    pub struct AdvCases {
         users: Mapping<u32, User>,
         users_num: u32,
         users_by_account: Mapping<AccountId, u64>,
     }
 
-    impl Adv {
+    impl AdvCases {
         #[ink(constructor)]
         pub fn default() -> Self {
             ink_lang::utils::initialize_contract(|this: &mut Self| {

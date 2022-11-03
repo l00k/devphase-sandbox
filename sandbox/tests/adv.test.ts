@@ -1,12 +1,12 @@
-import { Adv } from '@/typings/Adv';
+import { AdvCases } from '@/typings/AdvCases';
 import * as PhalaSdk from '@phala/sdk';
 import type { KeyringPair } from '@polkadot/keyring/types';
 import { ContractType } from 'devphase';
 
 
 describe('Adv', () => {
-    let factory : Adv.Factory;
-    let contract : Adv.Contract;
+    let factory : AdvCases.Factory;
+    let contract : AdvCases.Contract;
     let signer : KeyringPair;
     let certificate : PhalaSdk.CertificateData;
     
