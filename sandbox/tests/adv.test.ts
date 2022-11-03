@@ -13,7 +13,7 @@ describe('Adv', () => {
     before(async function() {
         factory = await this.devPhase.getFactory(
             ContractType.InkCode,
-            './contracts/adv/target/ink/adv.contract'
+            'adv_cases'
         );
         
         await factory.deploy();
