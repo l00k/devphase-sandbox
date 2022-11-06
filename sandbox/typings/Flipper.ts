@@ -6,6 +6,8 @@ import type { ContractCallOutcome, ContractOptions } from "@polkadot/api-contrac
 import type { Codec } from "@polkadot/types/types";
 
 export namespace Flipper {
+    type InkEnv_Types_AccountId = any;
+
     /** */
     /** Queries */
     /** */
@@ -28,7 +30,7 @@ export namespace Flipper {
     /** Transactions */
     /** */
     namespace ContractTx {
-        export interface Flip extends DPT.ContractTx {
+        export interface TraitX_TraitXFunc2 extends DPT.ContractTx {
             (options: ContractOptions): DPT.SubmittableExtrinsic;
         }
 
@@ -38,7 +40,7 @@ export namespace Flipper {
     }
 
     export interface MapMessageTx extends DPT.MapMessageTx {
-        flip: ContractTx.Flip;
+        'traitX::traitXFunc2': ContractTx.TraitX_TraitXFunc2;
         set: ContractTx.Set;
     }
 
