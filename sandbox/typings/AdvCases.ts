@@ -6,22 +6,37 @@ import type { ContractCallOutcome, ContractOptions } from "@polkadot/api-contrac
 import type { Codec } from "@polkadot/types/types";
 
 export namespace AdvCases {
-    type ink_primitives$Key = any;
-    type ink_storage$lazy$mapping$Mapping = { offset_key: ink_primitives$Key };
-    type adv_cases$adv_cases$User = { active: boolean, name: string, role: any, age: number, salery: number, favorite_numbers: number[] };
-    type ink_env$types$AccountId = any;
+    type InkPrimitives_Key = any;
+    type InkStorage_Lazy_Mapping_Mapping = { offset_key: InkPrimitives_Key };
+    type AdvCases_AdvCases_User = { active: boolean, name: string, role: any, age: number, salery: number, favorite_numbers: number[] };
+    type InkEnv_Types_AccountId = any;
 
     /** */
     /** Queries */
     /** */
     namespace ContractQuery {
-        export interface Get extends DPT.ContractQuery {
+        export interface GetUser extends DPT.ContractQuery {
+            (certificateData: PhalaSdk.CertificateData, options: ContractOptions, idx: number): DPT.CallResult<DPT.CallOutcome<DPT.IJson<AdvCases_AdvCases_User>>>;
+        }
+
+        export interface GetUserByResult extends DPT.ContractQuery {
             (certificateData: PhalaSdk.CertificateData, options: ContractOptions, idx: number): DPT.CallResult<DPT.CallOutcome<any>>;
+        }
+
+        export interface GetArray extends DPT.ContractQuery {
+            (certificateData: PhalaSdk.CertificateData, options: ContractOptions, text: string): DPT.CallResult<DPT.CallOutcome<DPT.IVec<DPT.INumber>>>;
+        }
+
+        export interface GetTuple extends DPT.ContractQuery {
+            (certificateData: PhalaSdk.CertificateData, options: ContractOptions, text: string): DPT.CallResult<DPT.CallOutcome<DPT.ITuple<[ DPT.INumber, DPT.IText ]>>>;
         }
     }
 
     export interface MapMessageQuery extends DPT.MapMessageQuery {
-        get: ContractQuery.Get;
+        getUser: ContractQuery.GetUser;
+        getUserByResult: ContractQuery.GetUserByResult;
+        getArray: ContractQuery.GetArray;
+        getTuple: ContractQuery.GetTuple;
     }
 
     /** */
@@ -29,7 +44,7 @@ export namespace AdvCases {
     /** */
     namespace ContractTx {
         export interface Add extends DPT.ContractTx {
-            (options: ContractOptions, user: adv_cases$adv_cases$User): DPT.SubmittableExtrinsic;
+            (options: ContractOptions, user: AdvCases_AdvCases_User): DPT.SubmittableExtrinsic;
         }
     }
 

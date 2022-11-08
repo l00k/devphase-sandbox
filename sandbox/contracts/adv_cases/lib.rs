@@ -81,8 +81,34 @@ mod adv_cases {
         }
 
         #[ink(message)]
-        pub fn get(&self, idx : u32) -> Result<User> {
+        pub fn get_user(&self, idx : u32) -> User {
+            let user = self.users.get(idx);
+            match user {
+                None => User {
+                    active: false,
+                    name: String::from("none"),
+                    role: Role::Admin,
+                    age: 0,
+                    salery: 0,
+                    favorite_numbers: Vec::new(),
+                },
+                Some(user) => user,
+            }
+        }
+
+        #[ink(message)]
+        pub fn get_user_by_result(&self, idx : u32) -> Result<User> {
             self.users.get(idx).ok_or(Error::NotFound)
+        }
+
+        #[ink(message)]
+        pub fn get_array(&self, text : String) -> Vec<u64> {
+            Vec::new()
+        }
+
+        #[ink(message)]
+        pub fn get_tuple(&self, text : String) -> (u64, String) {
+            (10, text)
         }
     }
 }
