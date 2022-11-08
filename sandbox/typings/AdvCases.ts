@@ -8,8 +8,11 @@ import type { Codec } from "@polkadot/types/types";
 export namespace AdvCases {
     type InkPrimitives_Key = any;
     type InkStorage_Lazy_Mapping_Mapping = { offset_key: InkPrimitives_Key };
-    type AdvCases_AdvCases_User = { active: boolean, name: string, role: any, age: number, salery: number, favorite_numbers: number[] };
+    type AdvCases_AdvCases_Role = { User: null } | { Admin: null };
+    type AdvCases_AdvCases_User = { active: boolean, name: string, role: AdvCases_AdvCases_Role, age: number, salery: number, favorite_numbers: number[] };
     type InkEnv_Types_AccountId = any;
+    type AdvCases_AdvCases_Error = { NotFound: null } | { Unknonw: null };
+    type Result = { Ok: AdvCases_AdvCases_User } | { Err: AdvCases_AdvCases_Error };
 
     /** */
     /** Queries */
@@ -20,7 +23,7 @@ export namespace AdvCases {
         }
 
         export interface GetUserByResult extends DPT.ContractQuery {
-            (certificateData: PhalaSdk.CertificateData, options: ContractOptions, idx: number): DPT.CallResult<DPT.CallOutcome<any>>;
+            (certificateData: PhalaSdk.CertificateData, options: ContractOptions, idx: number): DPT.CallResult<DPT.CallOutcome<DPT.IJson<Result>>>;
         }
 
         export interface GetArray extends DPT.ContractQuery {
