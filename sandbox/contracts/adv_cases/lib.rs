@@ -97,6 +97,11 @@ mod adv_cases {
         }
 
         #[ink(message)]
+        pub fn get_integers(&self) -> (u8, u128, i8, i128) {
+            (1, 2, -3, 4)
+        }
+
+        #[ink(message)]
         pub fn get_user_by_result(&self, idx : u32) -> Result<User> {
             self.users.get(idx).ok_or(Error::NotFound)
         }

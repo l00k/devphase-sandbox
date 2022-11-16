@@ -22,6 +22,10 @@ export namespace AdvCases {
             (certificateData: PhalaSdk.CertificateData, options: ContractOptions, idx: number): DPT.CallResult<DPT.CallOutcome<DPT.IJson<AdvCases_AdvCases_User>>>;
         }
 
+        export interface GetIntegers extends DPT.ContractQuery {
+            (certificateData: PhalaSdk.CertificateData, options: ContractOptions): DPT.CallResult<DPT.CallOutcome<DPT.ITuple<[ DPT.INumber, DPT.INumber, DPT.INumber, DPT.INumber ]>>>;
+        }
+
         export interface GetUserByResult extends DPT.ContractQuery {
             (certificateData: PhalaSdk.CertificateData, options: ContractOptions, idx: number): DPT.CallResult<DPT.CallOutcome<DPT.IJson<Result>>>;
         }
@@ -37,6 +41,7 @@ export namespace AdvCases {
 
     export interface MapMessageQuery extends DPT.MapMessageQuery {
         getUser: ContractQuery.GetUser;
+        getIntegers: ContractQuery.GetIntegers;
         getUserByResult: ContractQuery.GetUserByResult;
         getArray: ContractQuery.GetArray;
         getTuple: ContractQuery.GetTuple;
