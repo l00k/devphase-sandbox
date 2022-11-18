@@ -4,6 +4,7 @@ import { DevPhase } from 'devphase/dist';
 const config : ProjectConfigOptions = {
     testing: {
         blockTime: 250,
+        spawnStack: false,
         stackLogOutput: true,
         envSetup: {
             setup: {
