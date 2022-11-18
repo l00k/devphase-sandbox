@@ -4,12 +4,10 @@ import { DevPhase } from 'devphase/dist';
 const config : ProjectConfigOptions = {
     testing: {
         blockTime: 250,
-        spawnStack: false,
-        stackLogOutput: true,
         envSetup: {
             setup: {
                 custom: async (devPhase : DevPhase) => {
-                    await devPhase.defaultEnvSetup();
+                    await devPhase.stackSetup();
                     console.log('Using default env setup done');
                 },
             }
