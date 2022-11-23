@@ -32,7 +32,6 @@ describe('Flipper', () => {
         
         it('Should be created with proper intial value', async function() {
             const response = await contract.query.get(certificate, {});
-            
             expect(response.output.toJSON()).to.be.equal(false);
         });
     });
@@ -44,7 +43,6 @@ describe('Flipper', () => {
         
         it('Should be created with proper intial value', async function() {
             const response = await contract.query.get(certificate, {});
-            
             expect(response.output.toJSON()).to.be.equal(true);
         });
     });

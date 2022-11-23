@@ -1,9 +1,12 @@
 import type { ProjectConfigOptions } from 'devphase';
-import { DevPhase } from 'devphase/dist';
+import { DevPhase } from 'devphase';
 
 const config : ProjectConfigOptions = {
+    stack: {
+        blockTime: 1000,
+    },
     testing: {
-        blockTime: 250,
+        blockTime: 100,
         envSetup: {
             setup: {
                 custom: async (devPhase : DevPhase) => {

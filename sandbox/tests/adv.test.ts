@@ -4,7 +4,7 @@ import type { KeyringPair } from '@polkadot/keyring/types';
 import { ContractType } from 'devphase';
 
 
-describe('Adv', () => {
+xdescribe('Adv', () => {
     let factory : AdvCases.Factory;
     let contract : AdvCases.Contract;
     let signer : KeyringPair;
@@ -31,7 +31,8 @@ describe('Adv', () => {
         });
         
         it('Should be created with proper intial value', async function() {
-            const response = await contract.query.get(certificate, {}, 0);
+            const response = await contract.query.getTuple(certificate, {}, 'test');
+            console.log(response);
             
             expect(response.output.toJSON()).to.be.equal(false);
         });
@@ -42,7 +43,7 @@ describe('Adv', () => {
                 age: 10,
                 favorite_numbers: [ 10, 12 ],
                 name: 'Sample',
-                role: 'User',
+                role: { User: null },
                 salery: 10000,
             });
             

@@ -6,42 +6,30 @@ import type { ContractCallOutcome, ContractOptions } from "@polkadot/api-contrac
 import type { Codec } from "@polkadot/types/types";
 
 export namespace Flipper {
-    type InkEnv_Types_AccountId = any;
-
     /** */
     /** Queries */
     /** */
     namespace ContractQuery {
         export interface Get extends DPT.ContractQuery {
-            (certificateData: PhalaSdk.CertificateData, options: ContractOptions): DPT.CallResult<DPT.CallOutcome<DPT.IBool>>;
-        }
-
-        export interface Equals extends DPT.ContractQuery {
-            (certificateData: PhalaSdk.CertificateData, options: ContractOptions, value: boolean): DPT.CallResult<DPT.CallOutcome<DPT.IBool>>;
+            (certificateData: PhalaSdk.CertificateData, options: ContractOptions): DPT.CallResult<DPT.CallOutcome<DPT.IJson<boolean>>>;
         }
     }
 
     export interface MapMessageQuery extends DPT.MapMessageQuery {
         get: ContractQuery.Get;
-        equals: ContractQuery.Equals;
     }
 
     /** */
     /** Transactions */
     /** */
     namespace ContractTx {
-        export interface TraitX_TraitXFunc2 extends DPT.ContractTx {
+        export interface Flip extends DPT.ContractTx {
             (options: ContractOptions): DPT.SubmittableExtrinsic;
-        }
-
-        export interface Set extends DPT.ContractTx {
-            (options: ContractOptions, value: boolean): DPT.SubmittableExtrinsic;
         }
     }
 
     export interface MapMessageTx extends DPT.MapMessageTx {
-        'traitX::traitXFunc2': ContractTx.TraitX_TraitXFunc2;
-        set: ContractTx.Set;
+        flip: ContractTx.Flip;
     }
 
     /** */
