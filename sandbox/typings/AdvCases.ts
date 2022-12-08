@@ -13,7 +13,7 @@ export namespace AdvCases {
     type InkEnv_Types_AccountId = any;
     type AdvCases_AdvCases_Error = { NotFound: null } | { Unknonw: null };
     type Result = { Ok: AdvCases_AdvCases_User } | { Err: AdvCases_AdvCases_Error };
-    type AdvCases_AdvCases_Error2 = void;
+    type AdvCases_AdvCases_Error2 = {};
 
     /** */
     /** Queries */
