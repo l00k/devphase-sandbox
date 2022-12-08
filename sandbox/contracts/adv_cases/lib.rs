@@ -27,6 +27,11 @@ mod adv_cases {
         Unknonw,
     }
 
+    #[derive(Debug, PartialEq, Eq, Encode, Decode)]
+    #[cfg_attr(feature = "std", derive(scale_info::TypeInfo))]
+    pub enum Error2 {
+    }
+
     pub type Result<T> = core::result::Result<T, Error>;
 
     #[derive(
@@ -114,6 +119,11 @@ mod adv_cases {
         #[ink(message)]
         pub fn get_tuple(&self, text : String) -> (u64, String) {
             (10, text)
+        }
+
+        #[ink(message)]
+        pub fn sample(&self, value : Error2) -> u8 {
+            1
         }
     }
 }

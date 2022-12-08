@@ -13,6 +13,7 @@ export namespace AdvCases {
     type InkEnv_Types_AccountId = any;
     type AdvCases_AdvCases_Error = { NotFound: null } | { Unknonw: null };
     type Result = { Ok: AdvCases_AdvCases_User } | { Err: AdvCases_AdvCases_Error };
+    type AdvCases_AdvCases_Error2 = void;
 
     /** */
     /** Queries */
@@ -37,6 +38,10 @@ export namespace AdvCases {
         export interface GetTuple extends DPT.ContractQuery {
             (certificateData: PhalaSdk.CertificateData, options: ContractOptions, text: string): DPT.CallResult<DPT.CallOutcome<DPT.ITuple<[ DPT.INumber, DPT.IText ]>>>;
         }
+
+        export interface Sample extends DPT.ContractQuery {
+            (certificateData: PhalaSdk.CertificateData, options: ContractOptions, value: AdvCases_AdvCases_Error2): DPT.CallResult<DPT.CallOutcome<DPT.INumber>>;
+        }
     }
 
     export interface MapMessageQuery extends DPT.MapMessageQuery {
@@ -45,6 +50,7 @@ export namespace AdvCases {
         getUserByResult: ContractQuery.GetUserByResult;
         getArray: ContractQuery.GetArray;
         getTuple: ContractQuery.GetTuple;
+        sample: ContractQuery.Sample;
     }
 
     /** */
