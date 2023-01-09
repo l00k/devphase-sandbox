@@ -3,3 +3,5 @@
 /contracts/*/target
 /logs
 /stacks
+
+/accounts.json
